@@ -1,7 +1,7 @@
 Bare Bones
 ===========
 
-Screw floats, forget Bootstrap and Foundation, and equip your website with a flex-based CSS layout.
+Screw floats, forget Bootstrap and Foundation, and equip your website with a flex-based CSS layout for that perfect responsive design we all know and love.
 
 
 How To Use
@@ -9,9 +9,9 @@ How To Use
 
 Bare Bones uses CSS's flex property, giving you the ability of a flex item to alter its dimensions to consume the space around it.
 
-The grid system is comprised of a percent-based column layout, prefixed with .flex-c-.  To ensure a cohesive layout, create a .flex-row class and embed as many columns as desired so long as they add up to 100.
+The grid system is comprised of a percent-based column layout, classes prefixed with .flex-c-.  To ensure a cohesive layout, create a .flex-row class and embed as many columns as desired so long as they add up to 100.
 
-example:
+Example:
 
 ```
 <div class="flex-wrap">
@@ -22,6 +22,8 @@ example:
   </div>
 </div>
 ```
+
+
 
 Contributors
 ===========
