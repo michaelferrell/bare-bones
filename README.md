@@ -13,6 +13,7 @@ The grid system is comprised of a percent-based column layout, prefixed with .fl
 
 example:
 
+```
 <div class="flex-wrap">
   <div class="flex-row">
     <div class="flex-c-33">33%</div>
@@ -20,6 +21,7 @@ example:
     <div class="flex-c-33">33%</div>
   </div>
 </div>
+```
 
 Contributors
 ===========
