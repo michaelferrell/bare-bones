@@ -4,27 +4,21 @@
 }
 
 @media (min-width:768px) {
-
     .flex-wrap {
         width: 750px;
     };
-
 }
 
 @media (min-width:992px) {
-
     .flex-wrap {
         width: 970px;
     };
-
 }
 
 @media (min-width:1200px) {
-
     .flex-wrap {
         width: 1170px;
     };
-
 }
 
 .flex-row {
@@ -62,6 +56,10 @@
     width: 66.66%;
 }
 
+.flex-c-75 {
+    width: 75%;
+}
+
 .flex-c-100 {
     width: 100%;
 }
@@ -81,7 +79,10 @@
 }
 
 
-/* demo specific styles - NOT required for the grid */
+/*********************************************************
+ * Demo specific styles that are NOT required for the grid
+ */
+
 [class*=flex-c-] {
     background-color: #ddd;
     height: 60px;
