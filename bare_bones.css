@@ -77,23 +77,3 @@
     position: relative;
     min-height: 1px;
 }
-
-
-/*********************************************************
- * Demo specific styles that are NOT required for the grid
- */
-
-[class*=flex-c-] {
-    background-color: #ddd;
-    height: 60px;
-    padding-top: 20px
-}
-
-.flex-row {
-    margin-top: 20px
-}
-
-html, body, div {
-    margin: 0;
-    padding: 0;
-}
