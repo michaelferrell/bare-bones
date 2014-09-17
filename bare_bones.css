@@ -1,0 +1,98 @@
+.flex-wrap {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width:768px) {
+
+    .flex-wrap {
+        width: 750px;
+    };
+
+}
+
+@media (min-width:992px) {
+
+    .flex-wrap {
+        width: 970px;
+    };
+
+}
+
+@media (min-width:1200px) {
+
+    .flex-wrap {
+        width: 1170px;
+    };
+
+}
+
+.flex-row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    white-space: no-wrap
+}
+
+.flex-c-10 {
+    width: 10%;
+}
+
+.flex-c-20 {
+    width: 20%;
+}
+
+.flex-c-25 {
+    width: 25%;
+}
+
+.flex-c-33 {
+    width: 33.33%;
+}
+
+.flex-c-50 {
+    width: 50%;
+}
+
+.flex-c-66 {
+    width: 66.66%;
+}
+
+.flex-c-100 {
+    width: 100%;
+}
+
+@media(max-width: 480px) {
+   [class*=flex-c-] {
+    width: 100%
+   }
+}
+
+[class*=flex-] {
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    min-height: 1px;
+}
+
+
+/* demo specific styles - NOT required for the grid */
+[class*=flex-c-] {
+    background-color: #ddd;
+    height: 60px;
+    padding-top: 20px
+}
+
+.flex-row {
+    margin-top: 20px
+}
+
+html, body, div {
+    margin: 0;
+    padding: 0;
+}
