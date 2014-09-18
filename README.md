@@ -30,4 +30,4 @@ Example:
 Contributors
 ===========
 
-Bare Bones was developed by Michael Ferrell and further enhanced by the always resourceful [Dylan Grafmyre](https://github.com/thorsummoner).
+Bare Bones was developed by Michael Ferrell and with small but impactful tweaks by [Dylan Grafmyre](https://github.com/thorsummoner).
