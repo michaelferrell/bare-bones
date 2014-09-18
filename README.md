@@ -1,7 +1,7 @@
 Bare Bones
 ===========
 
-Screw floats, forget Bootstrap and Foundation, and equip your website with a flex-based CSS layout for that perfect responsive design we all know and love.
+Screw floats, we have seen enough of Bootstrap and Foundation, so equip your website with a flex-based CSS layout for that perfect responsive design we all know and love.
 
 
 How To Use
