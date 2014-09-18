@@ -32,7 +32,12 @@
 	.demo [class*=flex-c-] {
 	    background-color: #ddd;
 	    height: 60px;
-	    padding-top: 20px
+	    padding-top: 20px;
+	    transition: .3s all;
+	}
+	.demo [class*=flex-c-]:hover {
+		background-color: #428BCA;
+		color: #fff
 	}
 	#pg-heading {
 		font-weight: 600;
@@ -139,7 +144,7 @@
  	    </div>
  	    <div class="flex-c-33">
  	    	<h3 class="col-heading">Lightweight, rapid development</h3>
- 	    	<p class="description">Fitting snug in CSS file with less than 100 lines, the simple class name convention and percent-based columns make for lightning fast development.</p>
+ 	    	<p class="description">Fitting snug in a CSS file with less than 100 lines, the simple class name convention and percent-based columns make for lightning fast development.</p>
  	    </div>
  	    <div class="flex-c-100">
  	    	<h2 class="section-title">The Grid</h2>
