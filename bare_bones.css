@@ -84,3 +84,7 @@
     min-height: 1px;
 }
 
+[class*=flex-] img {
+    max-width: 100%;
+    height: auto;
+}
