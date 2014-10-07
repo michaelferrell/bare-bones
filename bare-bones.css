@@ -1,5 +1,5 @@
 /*!
- * Bare Bones v1.0 (http://michaelferrell.github.io/bares-bones/)
+ * Bare Bones v1.1 (http://michaelferrell.github.io/bares-bones/)
  * Copyright 2014 rainydayidea.com
  * Licensed under MIT
  */
@@ -50,20 +50,44 @@
     width: 25%;
 }
 
+.flex-c-30 {
+    width: 30%;
+}
+
 .flex-c-33 {
     width: 33.33%;
+}
+
+.flex-c-40 {
+    width: 40%;
 }
 
 .flex-c-50 {
     width: 50%;
 }
 
+.flex-c-60 {
+    width: 60%;
+}
+
 .flex-c-66 {
     width: 66.66%;
 }
 
+.flex-c-70 {
+    width: 70%;
+}
+
 .flex-c-75 {
     width: 75%;
+}
+
+.flex-c-80 {
+    width: 80%;
+}
+
+.flex-c-90 {
+    width: 90%;
 }
 
 .flex-c-100 {
