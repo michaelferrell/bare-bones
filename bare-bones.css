@@ -1,30 +1,45 @@
-/*!
- * Bare Bones v1.1 (http://michaelferrell.github.io/bares-bones/)
- * Copyright 2014 rainydayidea.com
+/*
+ * Bare Bones v1.2 (http://michaelferrell.github.io/bares-bones/)
+ * Copyright 2014 Michael Ferrell rainydayidea.com
  * Licensed under MIT
  */
 
-.flex-wrap {
+.flex-wrap, .flex-wrap-full, .flex-wrap-narrow {
     margin-right: auto;
     margin-left: auto;
+}
+
+.flex-wrap-full {
+    width: 95%
 }
 
 @media (min-width:768px) {
     .flex-wrap {
         width: 750px;
-    };
+    }
+
+    .flex-wrap-narrow {
+        width: 540px;
+    }
 }
 
 @media (min-width:992px) {
     .flex-wrap {
         width: 970px;
-    };
+    }
+    .flex-wrap-narrow {
+        width: 760px;
+    }
 }
 
 @media (min-width:1200px) {
     .flex-wrap {
         width: 1170px;
-    };
+    }
+
+    .flex-wrap-narrow {
+        width: 960px;
+    }
 }
 
 .flex-row {
