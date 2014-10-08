@@ -16,7 +16,7 @@
 	 * Demo specific styles that are NOT required for the grid
 	 */
 
-	html, body, div, h1, h2, h3, p, a {
+	html, body, div, h1, h2, h3, p, a, ul, li {
 	    margin: 0;
 	    padding: 0;
 	}
@@ -73,6 +73,30 @@
 		line-height: 30px;
 		color: #616161
 	}
+	#size-options {
+		margin-top: 10px
+	}
+	#size-options li {
+		display: inline-block;
+		list-style: none;
+		background-color: #eee;
+		color: #428BCA;
+		padding: 10px 20px;
+		cursor: pointer;
+		margin-right: -4px;
+		font-weight: 700;
+		border: 1px solid #ddd;
+		border-left: 0;
+		transition: .2s all;
+
+	}
+	#size-options li:hover {
+		color: #999
+	}
+	#size-options .selected {
+		background-color: #428BCA;
+		color: #fff
+	}
 	.code-sample {
 		margin-top: 30px
 	}
@@ -93,9 +117,10 @@
 		text-shadow: 1px 1px 0px #173753;
 		text-transform: uppercase;
 		text-decoration: none;
+		transition: .3s opacity;
 	}
 	#download:hover {
-
+		opacity: .9
 	}
 	footer {
 		background-color: #e7e7e7;
@@ -125,7 +150,7 @@
  	</div>
    </div><!--/ hero -->
 
-    <div class="flex-wrap">
+    <div class="flex-wrap" id="main">
 
  	  <div class="flex-row">
  	    <div class="flex-c-100">
@@ -145,6 +170,17 @@
  	    <div class="flex-c-33">
  	    	<h3 class="col-heading">Lightweight, rapid development</h3>
  	    	<p class="description">Fitting snug in a CSS file with less than 100 lines, the simple class name convention and percent-based columns make for lightning fast development.</p>
+ 	    </div>
+      	<div class="flex-c-100">
+ 	    	<h2 class="section-title">Container Size Options</h2>
+ 	 		<p class="description">Bare Bones gives your three container options for a greater degree of customization and to suit your project's layout needs.  The default container is <strong>.flex-wrap</strong> which provides a standard responsive feel.  There is a thinner option of <strong>.flex-wrap-narrow</strong> for a layout encumbering far less screen realestate and may be ideal for websites with simpler and minimalist content structures such as a blog.  The last option is <strong>.flex-row-full</strong> which is a container always set to 95% of the viewport which provides a full width layout in any situation.</p>
+ 	 		<br />
+ 	 		<p class="description"><strong>Give it a shot</strong></p>
+ 	     	<ul id="size-options">
+ 	     		<li class="selected" id="default">.flex-wrap</li>
+ 	     		<li id="full">.flex-wrap-full</li>
+ 	     		<li id="narrow">.flex-wrap-narrow</li>
+ 	     	</ul>
  	    </div>
  	    <div class="flex-c-100">
  	    	<h2 class="section-title">The Grid</h2>
@@ -235,10 +271,6 @@
  	    	<img src="http://rainydayidea.com/bare-bones/code-sample.png" class="code-sample" alt="code sample" />
  	    </div>
       	<div class="flex-c-100">
- 	    	<h2 class="section-title">Container Size Options</h2>
- 	 		<p class="description">Bare Bones gives your three container options for a greater degree of customization and to suit your project's layout needs.  The default container is "flex-wrap" which provides a standard responsive feel.  There is a thinner option of "flex-wrap-narrow" for a layout encumbering far less screen realestate and may be ideal for websites with simpler and minimalist content structures such as a blog.  The last option is "flex-row-full" which is a container always set to 95% of the viewport which provides a full width layout in any situation.</p>
- 	    </div>
-      	<div class="flex-c-100">
  	    	<h2 class="section-title">Media Queries</h2>
  	 		<p class="description">Bare Bones uses a grand total of three media queries to construct the scalable grid.  This sets up an ideal situation for a reliable and consistent website that scales effortlessly from desktop down to mobile.  Bare Bones targets media queries using a min width specifier and only modifies that parent flex-wrap class.  So while the main container is adjusting to the viewport, the percent-based columns respond wonderfully to their parent.</p>
  	    </div>
@@ -262,5 +294,38 @@
 
 	 	</div>
     </footer>
+    <script type="text/javaScript">
+    	!function changeGrid() {
+	    	var defaultContainer = document.getElementById('default'),
+	    		fullContainer    = document.getElementById('full'),
+	    		narrowContainer  = document.getElementById('narrow'),
+	    		main             = document.getElementById('main');
+
+	    	defaultContainer.onclick = function() {
+	    			toggleClass(this, fullContainer, narrowContainer, 'flex-wrap', 'flex-wrap-full', 'flex-wrap-narrow')
+	    	}
+	    	fullContainer.onclick = function() {
+	    			toggleClass(this, defaultContainer, narrowContainer, 'flex-wrap-full', 'flex-wrap', 'flex-wrap-narrow')
+	    	}
+	    	narrowContainer.onclick = function() {
+	    			toggleClass(this, defaultContainer, fullContainer, 'flex-wrap-narrow', 'flex-wrap', 'flex-wrap-full')
+	    	}
+
+	    	function toggleClass(current, e1, e2, classAdd, classRemove1, classRemove2) {
+	    		// if this item isn't selected
+	    		if(!current.classList.contains('selected')) {
+	    			// add class selected
+		    		current.classList.add('selected');
+		    		// remove class selected from other item
+		    		e1.classList.remove('selected');
+		    		e2.classList.remove('selected');
+		    		// add new class to parent container
+		    		main.classList.add(classAdd);
+		    		// remove old class from parent container
+		    		main.classList.remove(classRemove1, classRemove2);
+	    		}
+	    	}
+    	}();
+    </script>
   </body>
 </html>
