@@ -1,8 +1,12 @@
-/*
- * Bare Bones v1.2 (http://michaelferrell.github.io/bares-bones/)
- * Copyright 2014 Michael Ferrell rainydayidea.com
+/*!
+ * Bare Bones v1.3 (http://michaelferrell.github.io/bares-bones/)
+ * Copyright 2014 rainydayidea.com
  * Licensed under MIT
  */
+
+
+/* WRAPPER OPTIONS
+ * =============== */
 
 .flex-wrap, .flex-wrap-full, .flex-wrap-narrow {
     margin-right: auto;
@@ -12,6 +16,9 @@
 .flex-wrap-full {
     width: 95%
 }
+
+/* WRAPPER BREAKPOINTS
+ * =================== */
 
 @media (min-width:768px) {
     .flex-wrap {
@@ -42,6 +49,9 @@
     }
 }
 
+/* THE FLEX MAGIC
+ * ============== */
+
 .flex-row {
     display: -webkit-box;
     display: -webkit-flex;
@@ -52,6 +62,9 @@
     flex-wrap: wrap;
     white-space: no-wrap
 }
+
+/* CORE COLUMNS
+ * ============ */
 
 .flex-c-10 {
     width: 10%;
@@ -109,11 +122,76 @@
     width: 100%;
 }
 
+/* MARGIN OFFSETS
+ * ============== */
+
+.push-10 {
+    margin-left: 10%;
+}
+
+.push-20 {
+    margin-left: 20%;
+}
+
+.push-25 {
+    margin-left: 25%;
+}
+
+.push-30 {
+    margin-left: 30%;
+}
+
+.push-33 {
+    margin-left: 33.33%;
+}
+
+.push-40 {
+    margin-left: 40%;
+}
+
+.push-50 {
+    margin-left: 50%;
+}
+
+.push-60 {
+    margin-left: 60%;
+}
+
+.push-66 {
+    margin-left: 66.66%;
+}
+
+.push-70 {
+    margin-left: 70%;
+}
+
+.push-75 {
+    margin-left: 75%;
+}
+
+.push-80 {
+    margin-left: 80%;
+}
+
+.push-90 {
+    margin-left: 90%;
+}
+
+/* MOBILE SIZING
+ * ============= */
+
 @media(max-width: 480px) {
    [class*=flex-c-] {
     width: 100%
    }
+
+   [class*=push-] {
+    margin-left: 0
+   }
 }
+
+/* COLUMN PADDING
+ * ============== */
 
 [class*=flex-] {
     box-sizing: border-box;
@@ -122,6 +200,9 @@
     position: relative;
     min-height: 1px;
 }
+
+/* RESPONSIVE IMAGES
+ * ================= */
 
 [class*=flex-] img {
     max-width: 100%;
