@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,6 +11,7 @@
     <meta name="author" content="Michael Ferrell">
     <title>Bare Bones</title>
     <link href="bare_bones.css" rel="stylesheet">
+    <link href="bare_bones_ui.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800' rel='stylesheet' type='text/css'>
     <style>
     /*********************************************************
@@ -73,6 +75,10 @@
 		line-height: 30px;
 		color: #616161
 	}
+	.pointer {
+		border-left: 2px solid #ccc;
+		padding-left: 10px;
+	}
 	#size-options {
 		margin-top: 10px
 	}
@@ -132,6 +138,52 @@
 	.ext-link {
 		color: #111
 	}
+	.cmpnt-name {
+		color: #428BCA;
+		font-size: 20px;
+		font-weight: 600;
+		margin-top: 20px;
+	}
+	.component-wrap {
+		margin-top: 20px;
+	}
+	.markup {
+		background-color: #f7f7f9;
+		border: 1px solid #e1e1e8;
+		margin-top: 10px;
+		word-break: normal;
+		white-space: nowrap;
+		padding: 20px;
+	}
+	.markup code {
+		font-family: monospace;
+		display: block;
+		margin-bottom: 10px;
+		color: #4f9fcf;
+	}
+	.markup .comment {
+		color: #999;
+		margin-top: 20px;
+	}
+	.markup .comment:first-child {
+		margin-top: 0;
+	}
+	.markup .tag,
+	.solo-tag {
+		font-family: monospace;
+		color: #000080
+	}
+	.markup .class,
+	.solo-class {
+		font-family: monospace;
+		color: #d44950;
+	}
+	.solo-class,
+	.solo-tag {
+		background-color: #f7f7f9;
+		border-radius: 3px;
+		font-size: 14px
+	}
     </style>
   </head>
   <body>
@@ -143,7 +195,7 @@
  	    	<h1 id="pg-heading">Bare Bones</h1>
  	    </div>
  	    <div class="flex-c-100">
- 	    	<h2 id="pg-tagline">One heck of a css flex-based grid system for developing responsive projects</h2>
+ 	    	<h2 id="pg-tagline">A flex-based grid coupled with neat UI components for developing responsive projects</h2>
  	    </div>
  	  </div>
 
@@ -157,7 +209,7 @@
  	    	<h2 class="section-title">What Is It?</h2>
  	    </div>
  	    <div class="flex-c-100">
- 	    	<p class="description">Bare Bones is a tiny CSS file packing quite the punch. It can help you build robust and responsive sites that look beautiful on any device. Bare Bones is built on three core principles:</p>
+ 	    	<p class="description">Bare Bones is a medium-sized CSS file packing quite the punch. It can help you build robust and responsive sites that look beautiful on any device. Bare Bones is built on three core principles:</p>
  	    </div>
  	    <div class="flex-c-33">
  	    	<h3 class="col-heading">Sturdy flex grid</h3>
@@ -168,10 +220,10 @@
  	    	<p class="description">Targeting the unpredictability of screen sizes, the row and column structure is a fully responsive layout, looking perfect on all devices.</p>
  	    </div>
  	    <div class="flex-c-33">
- 	    	<h3 class="col-heading">Lightweight, rapid development</h3>
- 	    	<p class="description">Fitting snug in a CSS file with less than 100 lines, the simple class name convention and percent-based columns make for lightning fast development.</p>
+ 	    	<h3 class="col-heading">Lovely UI component kit</h3>
+ 	    	<p class="description">Providing basic interface elements that have a modern look and feel, save development time, offer plenty of options, and fit nicely within all devices.</p>
  	    </div>
-      	<div class="flex-c-100">
+      	<div class="flex-c-100" style="margin-top:40px">
  	    	<h2 class="section-title">Container Size Options</h2>
  	 		<p class="description">Bare Bones gives your three container options for a greater degree of customization and to suit your project's layout needs.  The default container is <strong>.flex-wrap</strong> which provides a standard responsive feel.  There is a thinner option of <strong>.flex-wrap-narrow</strong> for a layout encumbering far less screen realestate and may be ideal for websites with simpler and minimalist content structures such as a blog.  The last option is <strong>.flex-row-full</strong> which is a container always set to 95% of the viewport which provides a full width layout in any situation.</p>
  	 		<br />
@@ -182,7 +234,7 @@
  	     		<li id="narrow">.flex-wrap-narrow</li>
  	     	</ul>
  	    </div>
- 	    <div class="flex-c-100">
+ 	    <div class="flex-c-100" style="margin-top:40px">
  	    	<h2 class="section-title">The Grid</h2>
  	    </div>
  	  </div>
@@ -293,6 +345,370 @@
         <div class="flex-c-10 push-10">Offset 10%</div>
       </div><!--/ flex-row -->
 
+
+      <div class="flex-row" style="margin-top:40px">
+      	<div class="flex-c-100">
+ 	    	<h2 class="section-title">UI Components</h2>
+ 	    </div>
+      </div><!--/ flex-row -->
+
+      <div class="flex-row">
+      	<div class="flex-c-100">
+ 	    	<p class="description cmpnt-name">Buttons</p>
+ 	    </div>
+      	<div class="flex-c-100" style="margin-top:20px">
+ 	    	<p class="description pointer">Button classes can be applied to 
+ 	    	<code><span class="solo-tag">&lt;input&gt;</span></code>,
+ 	    	<code><span class="solo-tag">&lt;a&gt;</span></code>, and
+ 	    	<code><span class="solo-tag">&lt;button&gt;</span></code>.
+ 	    	</p>
+ 	    	<p class="description pointer" style="margin-top:20px">Every button requires the <code><span class="solo-class">flex-btn</span></code> class to work.  After that, get creative with the available variety classes for a nice finishing touch.
+ 	    	<p class="description pointer" style="margin-top:20px">Primary class options:
+ 	    	<br/>
+ 	    	<code><span class="solo-class">flex-btn-full</span></code> <br/>
+ 	    	<code><span class="solo-class">flex-btn-full-sm</span></code> <br/>
+ 	    	<code><span class="solo-class">flex-btn-(a size)</span></code> <br/>
+ 	    	<code><span class="solo-class">btn-frame</span></code> <br/>
+ 	    	<code><span class="solo-class">btn-round</span></code> <br/>
+ 	    	<code><span class="solo-class">btn-rounder</span></code> <br/>
+ 	    	<code><span class="solo-class">btn-flat</span></code> <br/
+ 	    	<code><span class="solo-class">bdr-heavy</span></code>
+ 	    	</p>
+ 	    	<p class="description pointer" style="margin-top:20px">Color options: every button type uses the
+	    		<code><span class="solo-class">bg-(a color)</span> class for a background color.  The exception is <code><span class="solo-class">btn-frame</span></code> which requires a border color using <span class="solo-class">bdr-(a border color)</span></code>.
+ 	    	<br/>
+ 	    	<code>
+ 	    	<span class="solo-class">default</span>, 
+ 	    	<span class="solo-class">grey</span>, 
+ 	    	<span class="solo-class">blue</span>, 
+ 	    	<span class="solo-class">darkblue</span>, 
+ 	    	<span class="solo-class">green</span>, 
+ 	    	<span class="solo-class">yellow</span>, 
+ 	    	<span class="solo-class">red</span>,
+ 	    	<span class="solo-class">black</span>
+ 	    	</code> 
+ 	    	</p>
+ 	    </div>
+ 	  </div><!--/ flex-row -->
+      <div class="flex-row" style="margin-top:20px">
+
+      	<div class="flex-c-100" style="margin-top:20px">
+ 	    	<input type="submit" class="flex-btn-xs bg-default" value="xs button"/>
+ 	    	<input type="submit" class="flex-btn-xs btn-frame bdr-grey" value="xs button"/>
+ 	    	<input type="submit" class="flex-btn-xs bg-blue" value="xs button"/>
+ 	    	<input type="submit" class="flex-btn-xs btn-frame bdr-darkblue" value="xs button"/>
+ 	    	<input type="submit" class="flex-btn-xs bg-green" value="xs button"/>
+ 	    	<input type="submit" class="flex-btn-xs btn-frame bdr-yellow" value="xs button"/>
+ 	    	<input type="submit" class="flex-btn-xs bg-red" value="xs button"/>	
+ 	    	<input type="submit" class="flex-btn-xs btn-frame bdr-black" value="xs button"/>	
+ 	    </div>  
+      	<div class="flex-c-100" style="margin-bottom:20px; margin-top:20px">
+ 	    	<input type="submit" class="flex-btn-sm btn-frame bdr-default" value="sm button"/>
+ 	    	<input type="submit" class="flex-btn-sm bg-grey" value="sm button"/>
+ 	    	<input type="submit" class="flex-btn-sm btn-frame bdr-blue" value="sm button"/>
+ 	    	<input type="submit" class="flex-btn-sm bg-darkblue" value="sm button"/>
+ 	    	<input type="submit" class="flex-btn-sm btn-frame bdr-green" value="sm button"/>
+ 	    	<input type="submit" class="flex-btn-sm bg-yellow" value="sm button"/>
+ 	    	<input type="submit" class="flex-btn-sm btn-frame bdr-red" value="sm button"/>
+ 	    	<input type="submit" class="flex-btn-sm bg-black" value="sm button"/>
+      	</div>
+      	<div class="flex-c-20">
+ 	    	<input type="submit" class="flex-btn bg-default"/>
+ 	    	<input type="submit" class="flex-btn bg-grey"/>
+ 	    	<input type="submit" class="flex-btn bg-blue"/>
+ 	    	<input type="submit" class="flex-btn bg-darkblue"/>
+ 	    	<input type="submit" class="flex-btn bg-green"/>
+ 	    	<input type="submit" class="flex-btn bg-yellow"/>
+ 	    	<input type="submit" class="flex-btn bg-red"/>
+ 	    	<input type="submit" class="flex-btn bg-black"/>
+
+ 	    	<input type="submit" class="flex-btn btn-round bg-default" value="btn-round"/>
+ 	    	<input type="submit" class="flex-btn btn-round btn-frame bdr-grey" value="btn-round"/>
+ 	    	<input type="submit" class="flex-btn btn-round bg-blue" value="btn-round"/>
+ 	    	<input type="submit" class="flex-btn btn-round btn-frame bdr-darkblue" value="btn-round"/>
+ 	    	<input type="submit" class="flex-btn btn-round bg-green" value="btn-round"/>
+ 	    	<input type="submit" class="flex-btn btn-round btn-frame bdr-yellow" value="btn-round"/>
+ 	    	<input type="submit" class="flex-btn btn-round bg-red" value="btn-round"/>
+ 	    	<input type="submit" class="flex-btn btn-round btn-frame bdr-black" value="btn-round"/>
+ 	    </div>
+      	<div class="flex-c-20 align-center">
+ 	    	<input type="submit" class="flex-btn btn-frame bdr-default" value="btn-frame"/>
+ 	    	<input type="submit" class="flex-btn btn-frame bdr-grey" value="btn-frame"/>
+ 	    	<input type="submit" class="flex-btn btn-frame bdr-blue" value="btn-frame"/>
+ 	    	<input type="submit" class="flex-btn btn-frame bdr-darkblue" value="btn-frame"/>
+ 	    	<input type="submit" class="flex-btn btn-frame bdr-green" value="btn-frame"/>
+ 	    	<input type="submit" class="flex-btn btn-frame bdr-yellow" value="btn-frame"/>
+ 	    	<input type="submit" class="flex-btn btn-frame bdr-red" value="btn-frame"/>
+ 	    	<input type="submit" class="flex-btn btn-frame bdr-black" value="btn-frame"/>
+
+ 	    	<input type="submit" class="flex-btn btn-flat bg-default" value="btn-flat"/>
+ 	    	<input type="submit" class="flex-btn btn-flat bg-grey" value="btn-flat"/>
+ 	    	<input type="submit" class="flex-btn btn-flat bg-blue" value="btn-flat"/>
+ 	    	<input type="submit" class="flex-btn btn-flat bg-darkblue" value="btn-flat"/>
+ 	    	<input type="submit" class="flex-btn btn-flat bg-green" value="btn-flat"/>
+ 	    	<input type="submit" class="flex-btn btn-flat bg-yellow" value="btn-flat"/>
+ 	    	<input type="submit" class="flex-btn btn-flat bg-red" value="btn-flat"/>
+ 	    	<input type="submit" class="flex-btn btn-flat bg-black" value="btn-flat"/>
+ 	    </div>    
+      	<div class="flex-c-35 align-center">
+ 	    	<input type="submit" class="flex-btn-xl btn-frame bdr-default bdr-heavy btn-rounder" value="xl button"/>
+ 	    	<input type="submit" class="flex-btn-xl bg-grey" value="xl button"/>
+ 	    	<input type="submit" class="flex-btn-xl btn-frame bdr-blue bdr-heavy" value="xl button"/>
+ 	    	<input type="submit" class="flex-btn-xl bg-darkblue btn-rounder" value="xl button"/>
+ 	    	<input type="submit" class="flex-btn-xl btn-frame bdr-green bdr-heavy" value="xl button"/>
+ 	    	<input type="submit" class="flex-btn-xl bg-yellow" value="xl button"/>
+ 	    	<input type="submit" class="flex-btn-xl btn-frame bdr-red bdr-heavy btn-rounder" value="xl button"/>
+ 	    	<input type="submit" class="flex-btn-xl bg-black" value="xl button"/>
+      	</div>
+      	<div class="flex-c-25 align-center">
+ 	    	<input type="submit" class="flex-btn-lrg bg-default" value="lrg button"/>
+ 	    	<input type="submit" class="flex-btn-lrg btn-frame bdr-grey" value="lrg button"/>
+ 	    	<input type="submit" class="flex-btn-lrg bg-blue btn-rounder" value="lrg button"/>
+ 	    	<input type="submit" class="flex-btn-lrg btn-frame bdr-darkblue" value="lrg button"/>
+ 	    	<input type="submit" class="flex-btn-lrg bg-green" value="lrg button"/>
+ 	    	<input type="submit" class="flex-btn-lrg btn-frame bdr-yellow btn-rounder" value="lrg button"/>
+ 	    	<input type="submit" class="flex-btn-lrg bg-red" value="lrg button"/>
+ 	    	<input type="submit" class="flex-btn-lrg btn-frame bdr-black" value="lrg button"/>
+      	</div>
+      </div><!--/ flex-row -->
+      <div class="flex-row" style="margin-top:20px">
+ 	    <div class="flex-c-25">
+ 	    	<input type="submit" class="flex-btn-full btn-frame bdr-black bdr-heavy" value="heavy border"/>
+ 	    </div>
+ 	    <div class="flex-c-25">
+ 	    	<input type="submit" class="flex-btn-full btn-frame bdr-red bdr-heavy" value="heavy border"/>
+ 	    </div>
+ 	    <div class="flex-c-25">
+ 	    	<input type="submit" class="flex-btn-full btn-frame bdr-green bdr-heavy" value="heavy border"/>
+ 	    </div>
+ 	    <div class="flex-c-25">
+ 	    	<input type="submit" class="flex-btn-full btn-frame bdr-blue bdr-heavy" value="heavy border"/>
+ 	    </div>
+ 	    <div class="flex-c-25">
+ 	    	<input type="submit" class="flex-btn-full btn-flat btn-frame bdr-black" value="default border"/>
+ 	    </div>
+ 	    <div class="flex-c-25">
+ 	    	<input type="submit" class="flex-btn-full btn-flat btn-frame bdr-red" value="default border"/>
+ 	    </div>
+ 	    <div class="flex-c-25">
+ 	    	<input type="submit" class="flex-btn-full btn-flat btn-frame bdr-green" value="default border"/>
+ 	    </div>
+ 	    <div class="flex-c-25">
+ 	    	<input type="submit" class="flex-btn-full btn-flat btn-frame bdr-blue" value="default border"/>
+ 	    </div>
+      	<div class="flex-c-33">
+ 	    	<input type="submit" class="flex-btn-full bg-darkblue" value="full width button"/>
+ 	    </div>
+      	<div class="flex-c-66">
+ 	    	<input type="submit" class="flex-btn-full bg-blue" value="full width button"/>
+ 	    </div>
+      	<div class="flex-c-50">
+ 	    	<input type="submit" class="flex-btn-full btn-flat bg-green" value="full width button"/>
+ 	    </div>
+      	<div class="flex-c-50">
+ 	    	<input type="submit" class="flex-btn-full btn-flat bg-yellow" value="full width button"/>
+ 	    </div>
+    	<div class="flex-c-100">
+ 	    	<input type="submit" class="flex-btn-full btn-frame bdr-black" value="full width button"/>
+ 	    </div>
+ 	  </div><!--/ flex-row -->
+
+      <div class="flex-row">
+      	<div class="flex-c-100">
+ 	    	<p class="description cmpnt-name">Button Markup</p>
+ 	    	<section>
+ 	    		<pre class="markup">
+
+ 	    			<!-- STANDARD BUTTON -->
+ 	    			<code class="comment">&lt;!-- Standard button --&gt;</code>
+ 	    			<code>
+ 	    				<span class="tag">&lt;input</span> type=<span class="class">"submit"</span> class=<span class="class">"flex-btn bg-default"</span><span class="tag">/&gt;</span>
+ 	    			</code>
+
+ 	    			<!-- BUTTON COLORS -->
+ 	    			<code class="comment">&lt;!-- Button colors --&gt;</code>
+ 	    			<code>
+ 	    				<span class="tag">&lt;input</span> type=<span class="class">"submit"</span> class=<span class="class">"flex-btn bg-black"</span><span class="tag">/&gt;</span>
+ 	    			</code>
+ 	    			<code>
+ 	    				<span class="tag">&lt;input</span> type=<span class="class">"submit"</span> class=<span class="class">"flex-btn bg-blue"</span><span class="tag">/&gt;</span>
+ 	    			</code>
+
+ 	    			<!-- ROUND BUTTONS -->
+ 	    			<code class="comment">&lt;!-- Round buttons --&gt;</code>
+ 	    			<code>
+ 	    				<span class="tag">&lt;input</span> type=<span class="class">"submit"</span> class=<span class="class">"flex-btn btn-round bg-yellow"</span><span class="tag">/&gt;</span>
+ 	    			</code>
+ 	    			<code>
+ 	    				<span class="tag">&lt;input</span> type=<span class="class">"submit"</span> class=<span class="class">"flex-btn btn-round bg-green"</span><span class="tag">/&gt;</span>
+ 	    			</code>
+
+ 	    			<!-- flat BUTTONS-->
+ 	    			<code class="comment">&lt;!-- flat buttons --&gt;</code>
+ 	    			<code>
+ 	    				<span class="tag">&lt;input</span> type=<span class="class">"submit"</span> class=<span class="class">"flex-btn btn-flat bg-darkblue"</span><span class="tag">/&gt;</span>
+ 	    			</code>
+ 	    			<code>
+ 	    				<span class="tag">&lt;input</span> type=<span class="class">"submit"</span> class=<span class="class">"flex-btn btn-flat bg-red"</span><span class="tag">/&gt;</span>
+ 	    			</code>
+
+					<!-- BORDER ONLY BUTTONS -->
+ 	    			<code class="comment">&lt;!-- Border only buttons --&gt;</code>
+ 	    			<code>
+ 	    				<span class="tag">&lt;input</span> type=<span class="class">"submit"</span> class=<span class="class">"flex-btn btn-round btn-frame bdr-grey"</span><span class="tag">/&gt;</span>
+ 	    			</code>
+ 	    			<code>
+ 	    				<span class="tag">&lt;input</span> type=<span class="class">"submit"</span> class=<span class="class">"flex-btn btn-round btn-frame bdr-yellow bdr-heavy"</span><span class="tag">/&gt;</span>
+ 	    			</code>
+
+ 	    			<!-- BUTTON SIZES -->
+ 	    			<code class="comment">&lt;!-- Button sizes --&gt;</code>
+ 	    			<code>
+ 	    				<span class="tag">&lt;input</span> type=<span class="class">"submit"</span> class=<span class="class">"flex-btn-xs bg-grey"</span><span class="tag">/&gt;</span>
+ 	    			</code>
+ 	    			<code>
+ 	    				<span class="tag">&lt;input</span> type=<span class="class">"submit"</span> class=<span class="class">"flex-btn-sm bg-darkblue"</span><span class="tag">/&gt;</span>
+ 	    			</code>
+ 	    			<code>
+ 	    				<span class="tag">&lt;input</span> type=<span class="class">"submit"</span> class=<span class="class">"flex-btn-lrg bg-green"</span><span class="tag">/&gt;</span>
+ 	    			</code>
+ 	    			<code>
+ 	    				<span class="tag">&lt;input</span> type=<span class="class">"submit"</span> class=<span class="class">"flex-btn-xl bg-yellow"</span><span class="tag">/&gt;</span>
+ 	    			</code>
+
+					<!-- FULL WIDTH BUTTONS -->
+ 	    			<code class="comment">&lt;!-- Full width buttons--&gt;</code>
+ 	    			<code>
+ 	    				<span class="tag">&lt;input</span> type=<span class="class">"submit"</span> class=<span class="class">"flex-btn-full bg-green"</span><span class="tag">/&gt;</span>
+ 	    			</code>
+ 	    			<code>
+ 	    				<span class="tag">&lt;input</span> type=<span class="class">"submit"</span> class=<span class="class">"flex-btn-full-sm bg-red"</span><span class="tag">/&gt;</span>
+ 	    			</code>
+
+					<!-- BUTTON VARIATIONS -->
+ 	    			<code class="comment">&lt;!-- Button variations --&gt;</code>
+ 	    			<code>
+ 	    				<span class="tag">&lt;input</span> type=<span class="class">"submit"</span> class=<span class="class">"flex-btn-sm btn-flat bg-red"</span><span class="tag">/&gt;</span>
+ 	    			</code>
+ 	    			<code>
+ 	    				<span class="tag">&lt;input</span> type=<span class="class">"submit"</span> class=<span class="class">"flex-btn-lrg btn-round btn-frame bdr-yellow"</span><span class="tag">/&gt;</span>
+ 	    			</code>
+ 	    			<code>
+ 	    				<span class="tag">&lt;input</span> type=<span class="class">"submit"</span> class=<span class="class">"flex-btn-xl btn-flat btn-frame bdr-blue"</span><span class="tag">/&gt;</span>
+ 	    			</code>
+
+ 	    		</pre>
+ 	    	</section>
+ 	    </div>
+ 	  </div><!--/ flex-row -->
+
+      <div class="flex-row" style="margin-top:40px">
+      	<div class="flex-c-100">
+ 	    	<p class="description cmpnt-name">Forms</p>
+ 	    </div>
+		<div class="flex-c-100" style="margin-top:20px">
+ 	    	<p class="description pointer" style="margin-top:20px">For the <code><span class="solo-tag">&lt;form&gt;</span></code> tag, simply apply the <code><span class="solo-class">flex-form</span></code> class. 
+ 	    	<p class="description pointer" style="margin-top:20px">Form class options:
+ 	    	<br/>
+ 	    	<code><span class="solo-class">form-fill</span></code> <br/>
+ 	    	</p>
+
+ 	    	<p class="description pointer" style="margin-top:20px">For 
+ 	    		<code><span class="solo-tag">&lt;input&gt;</span></code>,
+ 	    		<code><span class="solo-tag">&lt;select&gt;</span></code>, and
+ 	    		<code><span class="solo-tag">&lt;textarea&gt;</span></code> you'll need to apply the <code><span class="solo-class">flex-input</span></code> class.
+ 	    		In addition, <code><span class="solo-tag">&lt;textarea&gt;</span></code> required the <code><span class="solo-class">ta-default</span></code> class.
+ 	    	</p>
+
+ 	    	<p class="description pointer" style="margin-top:20px">For 
+ 	    		<code><span class="solo-tag">&lt;radio&gt;</span></code> and
+ 	    		<code><span class="solo-tag">&lt;checkbox&gt;</span></code> you'll need to apply either the
+ 	    		<code><span class="solo-class">radio</span></code> or
+ 	    		<code><span class="solo-class">checbox</span></code> class.
+ 	    	</p>
+ 	    </div>
+ 	  </div><!--/ flex-row -->
+      <div class="flex-row" style="margin-top:20px">
+      	<div class="flex-c-33">
+    		<form class="flex-form form-fill">
+    			<h3 class="form-header">Fill out the form</h3>
+    			<select class="flex-input">
+					<option value="">Select</option>
+				    <option value="Good">Good</option>
+				    <option value="Great">Great</option>
+				    <option value="Excellent">Excellent</option>
+				    <option value="Outstanding">Outstanding</option>
+				</select>
+				<div class="checkbox">
+					<label>
+					<input type="checkbox" value="">
+					Option one
+					</label>
+				</div>
+				<div class="checkbox">
+					<label>
+					<input type="checkbox" value="">
+					Option two
+					</label>
+				</div>
+				<div class="checkbox">
+					<label>
+					<input type="checkbox" value="">
+					Option three
+					</label>
+				</div>
+				<div class="radio">
+					<label>
+					<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+					Option one is great
+					</label>
+				</div>
+				<div class="radio">
+					<label>
+					<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+					Option two can be good
+					</label>
+				</div>
+				<div class="radio">
+					<label>
+					<input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+					Option three is outstanding
+					</label>
+				</div>
+				<textarea name="about" class="flex-input ta-default" placeholder="Write something amazing"></textarea>
+				<input type="submit" class="flex-btn-full-sm bg-blue" />
+    		</form>
+    	</div>
+      	<div class="flex-c-33">
+    		<form class="flex-form">
+    			<label for="firstName" class="label-default">First name:</label>
+    			<input type="text" placeholder="Enter first" id="firstName" class="flex-input input-default"/>
+    			<label for="lastName" class="label-default">Last name:</label>
+    			<input type="text" placeholder="Enter last" id="lastName" class="flex-input input-default"/>
+    			<label for="about" class="label-default">About:</label>
+    			<textarea name="about" class="flex-input ta-default" placeholder="Write something amazing"></textarea>
+    			<input type="submit" class="flex-btn bg-black"/>
+    		</form>
+ 	    </div>
+      	<div class="flex-c-33">
+    		<form class="flex-form">
+    			<input type="text" value="Default" class="flex-input input-default"/>
+    			<input type="text" value="Error" class="flex-input input-error"/>
+    			<input type="text" value="Success" class="flex-input input-success"/>
+    			<div class="push-70">
+    				<input type="submit" class="flex-btn bg-default" />
+    			</div>
+    		</form>
+    		<form class="flex-form">
+    			<input type="text" class="flex-input input-default bdr-heavy" placeholder="Username"/>
+    			<input type="text" class="flex-input input-default bdr-heavy" placeholder="Email"/>
+    			<input type="password" class="flex-input input-default bdr-heavy" placeholder="Password"/>
+				<input type="submit" class="flex-btn bg-grey" />
+    		</form>
+    	</div>
+      </div><!--/ flex-row -->
+
+
       <div class="flex-row">
       	<div class="flex-c-100">
  	    	<h2 class="section-title">Getting Started</h2>
@@ -311,18 +727,17 @@
  	    	<a href="https://github.com/michaelferrell/bares-bones" id="download">Download</a>
  	    </div>
       </div>
+
     </div><!--/ flex-wrap -->
 
     <footer>
 	    <div class="flex-wrap">
-
 	 	  <div class="flex-row">
 	 	    <div class="flex-c-100">
-	 	    	<p clas="description">Designed and built by Michael Ferrell<br/> who is hacking away at <a href="http://rainydayidea.com" class="ext-link">rainydayidea</a>.</p>
-	 	    	<p clas="description">Currently v1.3</p>
+	 	    	<p class="description">Designed and built by Michael Ferrell<br/> who is hacking away at <a href="http://rainydayidea.com" class="ext-link">rainydayidea</a>.</p>
+	 	    	<p class="description">Currently v1.3</p>
 	 	    </div>
 	 	  </div>
-
 	 	</div>
     </footer>
     <script type="text/javaScript">
