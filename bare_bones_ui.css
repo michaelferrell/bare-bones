@@ -42,17 +42,17 @@ body, h1, h2, h3, h4, h5, p, span, label, input, textarea {
  * ========== */
 
 /* standard button template */
+
 .flex-btn,
 .flex-btn-xs,
 .flex-btn-sm,
 .flex-btn-lrg,
-.flex-btn-xl {
-    display: inline-block;
-    padding: 10px 28px;
+.flex-btn-xl,
+.flex-btn-full, 
+.flex-btn-full-sm, {
     border-radius: 3px;  
     margin-top: 10px;
     margin-bottom: 0px;
-    font-size: 14px;
     font-weight: 400;
     text-align: center;
     white-space: nowrap;
@@ -60,22 +60,25 @@ body, h1, h2, h3, h4, h5, p, span, label, input, textarea {
     cursor: pointer;
     border: 1px solid transparent;
     background-color: transparent;
+    background-image: none;
+    overflow: visible;
+    -webkit-appearance: button;
+    -webkit-user-select: none;
+}
+.flex-btn,
+.flex-btn-xs,
+.flex-btn-sm,
+.flex-btn-lrg,
+.flex-btn-xl {
+    display: inline-block;
+    padding: 10px 28px;
+    font-size: 14px;
 }
 .flex-btn-full, .flex-btn-full-sm {
     display: block;
     width: 100%;
     padding: 20px 0;
-    border-radius: 3px;  
-    margin-top: 10px;
-    margin-bottom: 0px;
     font-size: 20px;
-    font-weight: 400;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    border: 1px solid transparent;  
-    background-color: transparent;
 }
 .flex-btn-full-sm {
     padding: 12px 0;
